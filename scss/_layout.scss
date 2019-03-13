@@ -1,0 +1,44 @@
+body {
+  background: #eee;
+}
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.constrained {
+  max-width: 130rem;
+  margin: 0 auto;
+}
+
+// Media object
+.media {
+  overflow: hidden;
+  padding: 2rem;
+}
+@media (min-width: $tablet-min) {
+  .media__item  {
+    margin: 0 2rem 0 0;
+    float: left;
+  }
+  .media__item--rev  {
+    margin: 0 0 0 2rem;
+    float: right;
+  }
+  .media__content  {
+    overflow: hidden;
+  }
+}
+
+.media__item--logo {
+  max-width: 200px;
+  margin: 0 0 2rem;
+}
+
+.centre {
+  text-align: center;
+
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

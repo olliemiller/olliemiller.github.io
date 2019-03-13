@@ -1,0 +1,28 @@
+.screen-only {
+
+}
+.print-only {
+
+}
+.anchor:focus {
+  outline: none;
+}
+
+.desktop-only {
+  @media screen and (max-width: $mobile-max) {
+    display: none;
+  }
+}
+.mobile-only {
+  @media screen and (min-width: $tablet-min) {
+    display: none;
+  }
+}
+/*
+ * This is to provide a fixed ratio 'thing'
+ * I may need to extend it to make it accommodate things when
+ * content wants to spill out due to being absolute positioned
+ */
+@mixin aspect-ratio($width, $height, $widthInContainer: 100%) {
+  padding-top: ($height / $width) * $widthInContainer;
+}

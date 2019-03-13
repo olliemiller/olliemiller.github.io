@@ -1,0 +1,95 @@
+.btn {
+  display: inline-block;
+  font-weight: bold;
+  font-style: italic;
+  background: $blue;
+  color: $white;
+  padding: .8rem 1rem;
+  border-radius: 3px;
+  
+  &:hover {
+    border: 0;
+  }
+}
+
+.link-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 2rem 0;
+
+  li {
+    display: inline-block;
+    padding: 0 1rem 0 0;
+  }
+}
+
+
+// [1]: necessary to take up 100% of space in a flex grid column if short
+// [2]: Work around IE11 bug where additional whitespace exists below an element
+//      (https://github.com/philipwalton/flexbugs/issues/75)
+
+.split-panel {
+  background: $blue;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+
+  flex-grow: 1; // [1]
+  min-height: 1px; // [2]
+
+  @media (min-width: $tablet-min) {
+    flex-direction: row;
+  }
+  a {
+    color: $white;
+  }
+}
+
+.split-panel__header {
+  flex: 1 0 auto;
+}
+
+
+.split-panel--image {
+  .split-panel__header {
+    position: relative;
+  }
+
+  img {
+    display: block;
+  }
+
+  .split-panel__body {
+    padding: 3rem;
+
+    align-self: center;
+    text-align: center;
+
+    @media (min-width: $tablet-min) {
+      padding: 0 4rem;
+      flex-basis: 42.5%;
+    }
+  }
+}
+
+
+
+.split-panel--image-ratio {
+
+  .split-panel__header {
+    background: url(../img/content/ollie-gif.gif);
+    background-size: cover;
+    background-position: 40% 0%;
+
+    @include aspect-ratio(450, 324);
+
+    @media (min-width: $tablet-min) {
+      @include aspect-ratio(770, 300);
+    }
+
+    @media (min-width: $desktop-min) {
+      @include aspect-ratio(743, 435, 57.5%);
+
+    }
+  }
+}
